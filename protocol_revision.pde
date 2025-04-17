@@ -1,4 +1,4 @@
-ArrayList<Protocol> protocols;
+ ArrayList<Protocol> protocols;
 float elementHeight = 25;
 Scrollbar sb;
 float scroll;
@@ -36,11 +36,10 @@ void setup() {
   mouse = new PVector(mouseX, mouseY);
 
   protocols = new ArrayList<Protocol>();
-  for (int i = 0; i < 50; i++) {
-    protocols.add(new Protocol("HyperText Transfer Prrotocol", "HTTP", 80, "foundational protocol used for data transfer on the world wide web", OSILayer.APPLICATION));
-    protocols.add(new Protocol("File Transfer Protocol", "FTP", 21, "standard communication protocol used for transferring files between client and server on a computer network", OSILayer.APPLICATION));
-    protocols.add(new Protocol("Simple Mail Transfer Protocol", "SMTP", 25, "foundational protocol used for sending emails across the internet", OSILayer.APPLICATION));
-  }
+  protocols.add(new Protocol("HyperText Transfer Prrotocol", "HTTP", 80, "foundational protocol used for data transfer on the world wide web", OSILayer.APPLICATION));
+  protocols.add(new Protocol("File Transfer Protocol", "FTP", 21, "standard communication protocol used for transferring files between client and server on a computer network", OSILayer.APPLICATION));
+  protocols.add(new Protocol("Simple Mail Transfer Protocol", "SMTP", 25, "foundational protocol used for sending emails across the internet", OSILayer.APPLICATION));
+  
 }
 
 void draw() {
@@ -53,7 +52,7 @@ void draw() {
   //update the scrollbar
   sb.Update();
   
-  //move the list accordnig to the scrollbar
+  //move the list according to the scrollbar
   pushMatrix();
   translate(0, -sb.effectiveZone);
   display();
